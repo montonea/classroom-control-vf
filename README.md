@@ -14,3 +14,10 @@ directory using r10k.
 ## Starter code
 
 Note that this repository includes some incomplete starter code.
+
+## Edit
+
+This is Andrew making an edit:
+* Bullet 1
+* Bullet 2
+* So many bullets...
