@@ -45,12 +45,17 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
  
 
-  file {'/etc/motd':
-    ensure  => file,
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content => "Have a nice day!",
-}
+  # file {'/etc/motd':
+  # ensure  => file,
+  # owner   => 'root',
+  # group   => 'root',
+  # mode    => '0644',
+  # content => "Have a nice day!",
+#}
+
+exec {"cosway 'Welcome to ${::fqdn}!'>/etc/motd":
+  path  => '/usr/bin:/usr/local/bin',
+  creates => '/etc/motd',
+  }
 
 }
