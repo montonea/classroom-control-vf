@@ -49,7 +49,7 @@ node default {
   file { 'motd' :
     ensure  => file,
     path    => '/etc/motd',
-    content => 'Hope you're having a lovely day!',
+    content => 'Hope you are having a lovely day!',
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
