@@ -42,5 +42,17 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  notify { "Hello, my name is ${::hostname}": }
+  notify { 'test_message' :
+    message => "Hello, my name is ${::hostname}",
+  }
+  
+  file { 'motd' :
+    ensure  => file,
+    path    => '/etc/motd',
+    content => 'Hope you're having a lovely day!',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+  }
+  
 }
