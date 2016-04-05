@@ -52,5 +52,4 @@ node default {
     mode    => '0644',
     content => "Have a nice day!",
   }
-
 }
