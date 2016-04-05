@@ -46,19 +46,5 @@ node default {
     message => "Hello, my name is ${::hostname}",
   }
 
-  exec { 'motd' :
-    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
-    path    => '/usr/local/bin',
-    creates => '/etc/motd',
-  }
-
-  #file { 'motd' :
-  #  ensure  => file,
-  #  path    => '/etc/motd',
-  #  content => 'Hey Andrew! Hope you are having a lovely day!',
-  #  owner   => 'root',
-  #  group   => 'root',
-  #  mode    => '0644',
-  #}
-  
+  include users
 }
