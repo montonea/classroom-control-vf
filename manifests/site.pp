@@ -45,14 +45,19 @@ node default {
   notify { 'test_message' :
     message => "Hello, my name is ${::hostname}",
   }
-  
-  file { 'motd' :
-    ensure  => file,
-    path    => '/etc/motd',
-    content => 'Hey Andrew! Hope you are having a lovely day!',
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
+
+  exec { 'motd' :
+    command => "cowsay 'Welcome to ${::fqdn}!' > /etc/motd",
+    creates => '/etc/motd',
   }
+
+  #file { 'motd' :
+  #  ensure  => file,
+  #  path    => '/etc/motd',
+  #  content => 'Hey Andrew! Hope you are having a lovely day!',
+  #  owner   => 'root',
+  #  group   => 'root',
+  #  mode    => '0644',
+  #}
   
 }
