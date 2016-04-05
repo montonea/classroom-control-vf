@@ -45,12 +45,12 @@ node default {
   notify { "Hello, my name is ${::hostname}": }
   }
 
-  file { '/etc/motd':
+  file {'/etc/motd':
     ensure  => file,
-    path    => '/etc/motd'
-    content => 'Have a nice day!',
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
+    content => "Have a nice day!",
   }
+
 }
