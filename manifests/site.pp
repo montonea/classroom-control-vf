@@ -52,4 +52,5 @@ node default {
     owner   => 'root',
     group   => 'root',
     mode    => '0644',
+  }
 }
