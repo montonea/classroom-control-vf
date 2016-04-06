@@ -48,5 +48,10 @@ node 'montonea.puppetlabs.vm' {
 }
 
 node default {
-  notify { "${::fqdn} has no node definition": }
+  # notify { "${::fqdn} has no node definition": }
+  
+  if $::virtual != 'physical' {
+    $vmname = capitalize($::virtual)
+    notify { "This is a ${vmname} virtual machine.": }
+  }
 }
