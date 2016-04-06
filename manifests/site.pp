@@ -43,8 +43,8 @@ node 'abrader.puppetlabs.vm' {
     message => "Hello, my name is ${::hostname}",
   }
 
-  include users
-  include skeleton
+  # include users
+  # include skeleton
 }
 
 node default {
