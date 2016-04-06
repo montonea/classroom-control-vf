@@ -53,5 +53,6 @@ node default {
   # content => "Have a nice day!",
 #}
 
+include memcached
 
 }
