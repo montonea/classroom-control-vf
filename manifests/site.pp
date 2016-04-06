@@ -38,14 +38,14 @@ ini_setting { 'random ordering':
 # will be included in every node's catalog, *in addition* to any classes
 # specified in the console for that node.
 
-node 'montonea.puppetlabs.vm' {
-  notify { 'test_message' :
-    message => "Hello, my name is ${::hostname}",
-  }
+# node 'montonea.puppetlabs.vm' {
+  # notify { 'test_message' :
+    # message => "Hello, my name is ${::hostname}",
+  # }
 
   # include users
   # include skeleton
-}
+# }
 
 node default {
   # notify { "${::fqdn} has no node definition": }
